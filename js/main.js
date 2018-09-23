@@ -10,7 +10,6 @@ export default class Main extends Phaser.State {
         this.ball = null;
         this.thorns = null;
         this.hearts = null;
-        this.ballSpeedLimit = 600;
         this.logo = null;
         this.scores = 0;
         this.record = 0;
@@ -46,12 +45,6 @@ export default class Main extends Phaser.State {
         this.physics.arcade.collide(this.ball, this.walls);
         let hitBoard = this.physics.arcade.collide(this.ball, this.board, this.addSpeed, this.addScores, this); // true if ball touch board
         this.physics.arcade.overlap(this.ball, this.thorns, this.removeHeart, null, this);
-
-        //limit ball speed
-        this.ball.body.velocity.x = this.ball.body.velocity.x > this.ballSpeedLimit ? this.ballSpeedLimit : this.ball.body.velocity.x;
-        this.ball.body.velocity.x = this.ball.body.velocity.x < -this.ballSpeedLimit ? -this.ballSpeedLimit : this.ball.body.velocity.x;
-        this.ball.body.velocity.y = this.ball.body.velocity.y > this.ballSpeedLimit ? this.ballSpeedLimit : this.ball.body.velocity.y;
-        this.ball.body.velocity.y = this.ball.body.velocity.y < -this.ballSpeedLimit ? -this.ballSpeedLimit : this.ball.body.velocity.y;
 
         if(this.cursors.left.isDown) {         //arrows click test
             this.board.body.velocity.x = -400;
@@ -124,6 +117,7 @@ export default class Main extends Phaser.State {
         this.physics.arcade.enable(this.ball);
         this.ball.scale.setTo(.25,.25);
         this.ball.body.collideWorldBounds = true;
+        this.ball.body.maxVelocity.set(600);
         this.ball.body.bounce.y = 1;
         this.ball.body.bounce.x = 1;
     }
