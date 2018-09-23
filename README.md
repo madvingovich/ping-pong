@@ -23,3 +23,7 @@ build for production with minification  =>  "webpack --mode production"
 build for development  =>  "webpack --mode development"
 
 "npm run build"
+
+
+#Also u can check how is works here:
+https://my-little-ping-pong.herokuapp.com/dist/index.html
