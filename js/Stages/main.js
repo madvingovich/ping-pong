@@ -118,6 +118,7 @@ export default class Main extends Phaser.State {
         this.ball.scale.setTo(.25,.25);
         this.ball.body.collideWorldBounds = true;
         this.ball.body.maxVelocity.set(600);
+        this.ball.body.setCircle(50); // скругляет углы
         this.ball.body.bounce.y = 1;
         this.ball.body.bounce.x = 1;
     }

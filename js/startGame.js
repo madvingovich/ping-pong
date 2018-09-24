@@ -4,10 +4,10 @@ import PIXI from 'expose-loader?PIXI!phaser-ce/build/custom/pixi.js';
 import p2 from 'expose-loader?p2!phaser-ce/build/custom/p2.js';
 import Phaser from 'expose-loader?Phaser!phaser-ce/build/custom/phaser-split.js';
 
-import Boot from './boot'
-import Preload from './preload'
-import Main from './main'
-import GameOver from './gameOver'
+import Boot from './Stages/boot'
+import Preload from './Stages/preload'
+import Main from './Stages/main'
+import GameOver from './Stages/gameOver'
 
 
 let game = new Phaser.Game(500, 500,Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render});
