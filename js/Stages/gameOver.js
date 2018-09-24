@@ -5,7 +5,7 @@ export default class GameOver extends Phaser.State {
     }
     create() {
         this.stage.backgroundColor = '#4e7bff';
-        this.newGameBtn = this.add.button(this.world.width / 2, this.world.height / 2, 'new game', this.restart, this, this, this, this);
+        this.newGameBtn = this.add.button(this.world.width / 2, this.world.height / 2, 'new game', this.restart, this);
         this.newGameBtn.anchor.set(.5);
         this.newGameBtn.scale.setTo(.4,.4);
 
